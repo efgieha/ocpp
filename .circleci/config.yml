@@ -51,6 +51,18 @@ jobs:
           name: run tests
           command: make deps && make test
 
+  test-310:
+    docker:
+      - image: circleci/python:3.10
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run:
+          name: run tests
+          command: make deps && make test
+
 workflows:
     version: 2.1
     workflows:
@@ -59,3 +71,4 @@ workflows:
           - test-37
           - test-38
           - test-39
+          - test-310
