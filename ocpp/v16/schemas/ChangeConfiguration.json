@@ -8,8 +8,15 @@
             "maxLength": 50
         },
         "value": {
-            "type": "string",
-            "maxLength": 500
+            "anyOf": [
+                {
+                    "type": "string",
+                    "maxLength": 500
+                },
+                {
+                    "type": "integer"
+                }
+            ]
         }
     },
     "additionalProperties": false,

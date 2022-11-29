@@ -6,8 +6,15 @@
         "key": {
             "type": "array",
             "items": {
-                "type": "string",
-                "maxLength": 50
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    {
+                        "type": "integer"
+                    }
+                ]
             }
         }
     },
